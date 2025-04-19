@@ -79,7 +79,7 @@ def location():
     return latitude, longitude
 
 def api_call(parameter):
-    api_key = "2f6eec93664181f5080c3efb71fc439e"
+    api_key = "API KEY"
     lat, lon = location()
     url = f"http://api.openweathermap.org/data/2.5/{parameter}?lat={lat}&lon={lon}&appid={api_key}"
     return requests.get(url)
@@ -160,7 +160,7 @@ def icon():
         create_widget(root, icon_path).place(x=pos[0], y=pos[1])
 
 def history():
-    genai.configure(api_key="AIzaSyA4KTV02eC-_5IhBdk3yJYTBwBBhg5GVt0") 
+    genai.configure(api_key="API KEY") 
     generation_config = {"temperature": 0.9, "top_p": 0.95, "top_k": 40, "max_output_tokens": 8192, "response_mime_type": "text/plain"}
     model = genai.GenerativeModel(model_name="gemini-2.0-flash-exp", generation_config=generation_config)
     chat_session = model.start_chat(history=[])
